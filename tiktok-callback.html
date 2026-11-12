@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>Connexion TikTok – Six Actu</title>
+<style>
+  body { font-family: -apple-system, system-ui, "Segoe UI", sans-serif; max-width: 640px; margin: 0 auto; padding: 48px 16px; line-height: 1.6; color: #1d1d1f; background: #fff; }
+  code { display: block; word-break: break-all; background: #f4f4f6; padding: 12px; border-radius: 8px; margin: 12px 0; }
+  button { font: inherit; padding: 8px 16px; border-radius: 8px; border: 1px solid #c2185b; background: #c2185b; color: #fff; cursor: pointer; }
+  .err { color: #b00020; }
+</style>
+</head>
+<body>
+<h1>Connexion TikTok</h1>
+<div id="out"><p>Aucun code reçu.</p></div>
+<p><small>Six Actu – outil personnel de publication. <a href="privacy.html">Confidentialité</a> · <a href="terms.html">Conditions</a></small></p>
+<script>
+  // The authorization code stays in this browser: nothing is sent anywhere by this page.
+  var p = new URLSearchParams(location.search);
+  var out = document.getElementById("out");
+  if (p.get("error")) {
+    out.innerHTML = '<p class="err">TikTok a refusé la connexion : ' +
+      (p.get("error_description") || p.get("error")).replace(/[<>&]/g, "") + '</p>';
+  } else if (p.get("code")) {
+    var full = location.href;
+    out.innerHTML = '<p>Autorisation reçue. Copie l’adresse ci-dessous et colle-la dans le terminal du bot :</p>' +
+      '<code id="u"></code><button id="b">Copier</button>';
+    document.getElementById("u").textContent = full;
+    document.getElementById("b").onclick = function () {
+      navigator.clipboard.writeText(full).then(function () { document.getElementById("b").textContent = "Copié ✓"; });
+    };
+  }
+</script>
+</body>
+</html>
