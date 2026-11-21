@@ -1,33 +1,149 @@
 <!doctype html>
-<html lang="fr">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>gta6bot</title>
+<title>gta6bot – Six Actu</title>
+<meta name="description" content="gta6bot prepares short GTA 6 news videos for the Six Actu channel and publishes them to YouTube, Instagram and TikTok.">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <style>
-  body { font-family: -apple-system, system-ui, "Segoe UI", sans-serif; max-width: 760px; margin: 0 auto; padding: 48px 16px; line-height: 1.6; color: #1d1d1f; background: #fff; }
-  h1 { margin-bottom: 0.2em; }
+  :root { --pink: #ff2e88; --orange: #ff961e; --ink: #1d1d1f; --muted: #5a5a60; --line: #e4e4e8; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, system-ui, "Segoe UI", sans-serif; margin: 0; color: var(--ink); background: #fff; line-height: 1.6; }
   a { color: #c2185b; }
-  .yt { border-left: 4px solid #ff0000; background: #fff5f5; padding: 12px 16px; }
-  nav { margin-top: 32px; padding: 16px; border: 1px solid #ddd; border-radius: 10px; }
-  nav a { font-weight: 600; margin-right: 24px; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+  header { border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; gap: 12px; height: 64px; }
+  header img { width: 36px; height: 36px; border-radius: 8px; }
+  header strong { font-size: 18px; }
+  header nav { margin-left: auto; display: flex; gap: 18px; font-size: 15px; }
+  header nav a { color: var(--ink); text-decoration: none; }
+  .hero { background: linear-gradient(135deg, var(--pink), var(--orange)); color: #fff; padding: 56px 0; }
+  .hero .wrap { display: flex; gap: 32px; align-items: center; flex-wrap: wrap; }
+  .hero img { width: 140px; height: 140px; border-radius: 28px; box-shadow: 0 8px 30px rgba(0,0,0,.2); }
+  .hero h1 { font-size: 40px; line-height: 1.15; margin: 0 0 12px; }
+  .hero p { font-size: 18px; margin: 0; max-width: 560px; }
+  section { padding: 44px 0; border-bottom: 1px solid var(--line); }
+  h2 { font-size: 26px; margin: 0 0 18px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .card { border: 1px solid var(--line); border-radius: 12px; padding: 18px; }
+  .card h3 { margin: 0 0 6px; font-size: 18px; }
+  .card p { margin: 0; color: var(--muted); }
+  ol.steps { padding-left: 22px; }
+  ol.steps li { margin-bottom: 10px; }
+  .yt { border-left: 4px solid #ff0000; background: #fff5f5; padding: 12px 16px; border-radius: 4px; }
+  footer { padding: 28px 0 48px; color: var(--muted); font-size: 14px; }
+  footer nav { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 10px; }
+  @media (max-width: 600px) { header nav { display: none; } .hero h1 { font-size: 30px; } }
 </style>
 </head>
 <body>
-<h1>gta6bot</h1>
-<p>gta6bot est un outil personnel qui prépare de courtes vidéos d'actualité sur GTA 6 (voix en anglais, sous-titres en français)
-et les publie sur la chaîne YouTube <strong>Six Actu</strong> de son propriétaire.</p>
-<div class="yt">
-<p><strong>Utilise les services d'API YouTube.</strong> gta6bot se sert de l'API YouTube Data uniquement pour mettre en ligne ces
-vidéos sur cette chaîne (niveau d'accès <code>youtube.upload</code>). En l'utilisant, vous acceptez les
-<a href="https://www.youtube.com/t/terms">Conditions d'utilisation de YouTube</a>.</p>
+<header>
+  <div class="wrap">
+    <img src="icon.png" alt="gta6bot icon">
+    <strong>gta6bot</strong>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#tiktok">TikTok</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <img src="icon.png" alt="gta6bot icon">
+    <div>
+      <h1>Short GTA 6 news videos, made and published in one place</h1>
+      <p>gta6bot is the publishing tool of <strong>Six Actu</strong>, an independent French fan channel about GTA 6.
+      It turns sourced news into vertical videos and posts them to the channel's YouTube, Instagram and TikTok accounts.</p>
+    </div>
+  </div>
 </div>
-<p>L'outil n'est pas proposé au public et ne se connecte à aucun autre compte.</p>
-<p><em>gta6bot is a personal tool that produces short GTA 6 news videos and uploads them to its owner's own YouTube channel
-(Six Actu) through YouTube API Services. It is not offered to the public.</em></p>
-<nav>
-  <a href="privacy.html">Règles de confidentialité / Privacy policy</a>
-  <a href="terms.html">Conditions d'utilisation / Terms of use</a>
-</nav>
+
+<main>
+<section id="features">
+  <div class="wrap">
+    <h2>Features</h2>
+    <div class="grid">
+      <div class="card"><h3>Sourced news</h3><p>Every fact in a video comes from Rockstar Games or a recognised news outlet, and the source is kept with the video.</p></div>
+      <div class="card"><h3>Vertical video editing</h3><p>Voice-over, word-by-word subtitles and clips laid out in 1080×1920 for Shorts, Reels and TikTok.</p></div>
+      <div class="card"><h3>Quality check</h3><p>Each video is scored before release; videos below the threshold are not published.</p></div>
+      <div class="card"><h3>Multi-platform publishing</h3><p>One video, posted to YouTube, Instagram and TikTok with a caption written for each platform.</p></div>
+      <div class="card"><h3>AI disclosure</h3><p>The voice-over is synthetic, so every TikTok post carries TikTok's "AI-generated content" label.</p></div>
+      <div class="card"><h3>Owner approval</h3><p>Nothing is posted without the channel owner reviewing the video and choosing to publish it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><strong>Pick a subject.</strong> gta6bot gathers the day's GTA 6 news from official and press sources.</li>
+      <li><strong>Write and edit.</strong> It drafts a short script, records the voice-over and assembles the vertical video with subtitles.</li>
+      <li><strong>Review.</strong> The video is scored, then the channel owner watches the preview and approves it.</li>
+      <li><strong>Publish.</strong> The approved video is uploaded to the connected accounts, each with its own caption.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="tiktok">
+  <div class="wrap">
+    <h2>Publishing to TikTok</h2>
+    <p>gta6bot uses TikTok's Login Kit and Content Posting API with the scopes <code>user.info.basic</code>,
+    <code>video.upload</code> and <code>video.publish</code>.</p>
+    <ol class="steps">
+      <li>The account owner signs in with TikTok and authorises gta6bot. TikTok sends them back to
+        <a href="tiktok-callback.html">the connection page</a>.</li>
+      <li>The owner watches the finished video and reads its caption before approving it.</li>
+      <li>Before each post, gta6bot reads the creator's info from TikTok and uses the privacy level the owner has chosen,
+        only if TikTok lists it among the options allowed for the account.</li>
+      <li>The post is marked as AI-generated content, with comments, Duet and Stitch allowed, then sent to TikTok.</li>
+    </ol>
+    <p>gta6bot only posts to the account that authorised it, never reads other users' data, and stores the access token
+    on the owner's computer only. Access can be removed at any time from TikTok's app settings. Details are in the
+    <a href="privacy.html">privacy policy</a>.</p>
+  </div>
+</section>
+
+<section id="youtube">
+  <div class="wrap">
+    <h2>YouTube and Instagram</h2>
+    <div class="yt">
+      <p><strong>Uses YouTube API Services.</strong> gta6bot uploads videos to the Six Actu channel with the
+      <code>youtube.upload</code> scope. By using gta6bot you agree to the
+      <a href="https://www.youtube.com/t/terms">YouTube Terms of Service</a>.</p>
+    </div>
+    <p>Instagram Reels are published to the Six Actu professional account through Meta's Instagram API.</p>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About</h2>
+    <p>Six Actu is an independent fan channel, not affiliated with Rockstar Games or Take-Two Interactive.
+    gta6bot is built and run by the channel for its own accounts.</p>
+    <p><em>En français : gta6bot est l'outil de la chaîne Six Actu. Il prépare de courtes vidéos d'actualité GTA 6, toujours
+    sourcées, et les publie sur ses comptes YouTube, Instagram et TikTok après validation par le propriétaire.</em></p>
+    <p>Contact: through the Six Actu channel on YouTube or TikTok (@sixactu).</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <nav>
+      <a href="privacy.html">Privacy policy</a>
+      <a href="terms.html">Terms of service</a>
+      <a href="tiktok-callback.html">TikTok connection</a>
+    </nav>
+    <p>© 2026 Six Actu · gta6bot</p>
+  </div>
+</footer>
 </body>
 </html>
